@@ -1,0 +1,9 @@
+.time{
+    width: 95px;
+    display:flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: var(--font-family);
+    color: var( --color-text);
+}
