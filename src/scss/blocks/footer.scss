@@ -1,18 +1,27 @@
 /* ESTILOS DEL FOOTER */
-.footer{
-    width: 220px;
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
-    font-family: var(--font-family);
-    margin-right:50px;
-    color:white;
-    &__image{
-        width: 33px;
-        height: 33px;
-        margin-top:10px;
-        border-radius:50%;
-        border: 1px white solid;
-        align-items: center;
+@use '../mixins/responsive.scss' as *;
+@use '../mixins/hover.scss' as *;
+.footer {
+  width: 220px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: var(--font-family);
+  margin-right: 50px;
+  color: white;
+  &__image {
+    width: 33px;
+    height: 33px;
+    margin-top: 10px;
+    border-radius: 50%;
+    border: 1px white solid;
+    align-items: center;
+  }
+}
+.creator {
+  @include responsive(tablet) {
+    @include hover {
+      color: var(--color-etherum);
     }
+  }
 }

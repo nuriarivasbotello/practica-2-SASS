@@ -1,0 +1,76 @@
+@use '../mixins/pseudo.scss' as *;
+@use '../mixins/responsive.scss' as *;
+@use '../mixins/hover.scss' as *;
+.card {
+  width: 327px;
+  height: 543px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto;
+  border-radius: 1rem;
+  background-color: var(--color-card);
+  &__image-container {
+    position: relative;
+    overflow: hidden;
+    &::after {
+      @include pseudo(100%, 100%);
+      top: 0;
+      left: 0;
+      border-radius: 1rem;
+      opacity: 0;
+      transition: opacity 0.4s;
+      background-color: rgba(0, 255, 247, 0.506);
+    }
+    &:hover::after {
+      opacity: 1;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url(../assets/images/icon-view.svg);
+    }
+  }
+  &__image {
+    width: 278px;
+    border-radius: 1rem;
+    padding-top: 10px;
+    @include responsive(tablet) {
+      &:hover {
+        background-color: rgb(41, 176, 220);
+      }
+    }
+  }
+  &__title {
+    padding-left: 30px;
+    font-size: 20px;
+    font-family: var(--font-family);
+    color: white;
+
+    @include responsive(tablet) {
+      @include hover {
+        color: var(--color-etherum);
+      }
+    }
+  }
+  &__text {
+    margin-left: auto;
+    padding: 0 30px;
+    font-size: 20px;
+    font-family: var(--font-family);
+    color: var(--color-text);
+  }
+  &__information {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 30px;
+    &::before {
+      @include pseudo(1, 1) {
+        width: 265px;
+        height: 0.5px;
+        margin-top: 50px;
+        background-color: var(--color-text);
+      }
+    }
+  }
+}
